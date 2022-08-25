@@ -1,0 +1,35 @@
+create database basic_sql;
+use basic_sql;
+create TABLE user_details(
+id  int auto_increment,
+email varchar  (25) not null,
+first_name varchar (25) not null,
+last_name varchar (25) not null,
+pass_word varchar (25) not null,
+contact_number bigint not null,
+primary key(id)
+);
+
+insert into user_details(id,email, first_name, last_name, pass_word,contact_number)
+values
+(1,'sakshee1@gmail.com','Sakshee', 'Bhole', 's123', 9975510115),
+(2,'ne1@gmail.com','Nama', 'Sen', 'n1234', 8956480923),
+
+(3,'riya@gmail.com','Riya', 'Patil', 'r1234', 98225367601)
+;
+show tables;
+select * from user_details;
+select * from user_details where email='ne1@gmail.com';
+update user_details set email = 'nema@gmail.com' where id = 3; 
+delete from user_details where first_name = 'Nama';
+delete from user_deatisl;
+
+select count(id),email
+from user_details
+group by email
+having count(id)>1;
+
+select * from user_details order by  first_name;
+select * from user_details order by  last_name;
+select * from user_details order by  email;
+
